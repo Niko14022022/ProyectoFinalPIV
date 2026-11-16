@@ -6,6 +6,8 @@ Proyecto Final de **Programación IV** (II Cuatrimestre 2026), Bachillerato en I
 
 **Autor:** Nikolas Gabriel Marín Arías
 
+![Menú principal](docs/capturas/2_menu_principal.png)
+
 ---
 
 ## ¿Qué problema resuelve?
@@ -38,6 +40,14 @@ Todos los módulos tienen **CRUD completo** (incluir, consultar, actualizar, eli
 - Menú lateral con íconos, barra superior con usuario, rol y reloj, y tarjetas de indicadores (tiquetes pendientes, computadoras, software).
 - Estados con color en tiquetes y en el stock de licencias.
 - Validaciones: campos obligatorios, duplicados (serie, cédula), errores de llave foránea explicados al usuario y manejo de excepciones en cada pantalla.
+
+## Capturas de pantalla
+
+| Inicio de sesión | Control de computadoras |
+|---|---|
+| ![Login](docs/capturas/1_login.png) | ![Computadoras](docs/capturas/3_computadoras.png) |
+| **Tiquetes de atención** | **Mantenimiento de usuarios** |
+| ![Tiquetes](docs/capturas/4_tiquetes.png) | ![Usuarios](docs/capturas/5_usuarios.png) |
 
 ## Tecnologías
 
