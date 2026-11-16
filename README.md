@@ -50,6 +50,7 @@ Todos los módulos tienen **CRUD completo** (incluir, consultar, actualizar, eli
 
 ```
 ProyectoFinalPIV/
+├── Database/      # Scripts SQL: creación de la base de datos y datos de ejemplo
 ├── Datos/          # Acceso a datos (repositorios por entidad y conexión a SQL Server)
 ├── Formularios/    # Pantallas: Login, Principal, Computadoras, Software, Tiquetes, Usuarios, Notificaciones, Acerca de
 ├── Modelos/        # Clases de dominio: Usuario, Credencial, Computadora, SoftwareInstalado, Tiquete
@@ -63,8 +64,20 @@ La aplicación separa responsabilidades en capas: los **formularios** solo manej
 ## Cómo ejecutarlo
 
 1. Tener instalado **SQL Server** (Express sirve) y **Visual Studio 2022** con la carga de trabajo de escritorio .NET.
-2. Crear la base de datos en SQL Server con los scripts del proyecto.
+2. En SQL Server Management Studio, ejecutar `Database/CrearBaseDatos.sql` (crea la base `ProyectoFinalPIV`, las tablas y el usuario por defecto). Opcional: ejecutar `Database/DatosDemo.sql` para cargar usuarios, equipos, software y tiquetes de ejemplo.
 3. Abrir `App.config` y cambiar el nombre del servidor en la cadena de conexión por el de tu instancia.
 4. Abrir `ProyectoFinalPIV.csproj` en Visual Studio y presionar **F5**.
 
 Usuario por defecto (rol Administrador de TI): cédula `0501250125`, clave `12345678`.
+Con los datos de ejemplo también se puede entrar como Empleado (`101110111`) o Técnico de TI (`303330333`), con la misma clave.
+
+## Modelo de datos
+
+| Tabla | Descripción |
+|---|---|
+| `Usuarios` | Perfil, rol y estado (activo/inactivo) |
+| `Credenciales` | Tipo de autenticación (Sistema/Windows) y datos de acceso |
+| `Computadoras` | Inventario de equipos y empleado a cargo |
+| `Software` | Programas, licenciamiento, stock de licencias y técnico que instaló |
+| `SoftwarePorComputadora` | Relación N:M entre software y computadoras |
+| `Tiquetes` | Incidencias, técnico asignado, estado y fechas |
